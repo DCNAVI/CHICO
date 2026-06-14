@@ -29,11 +29,14 @@ Coloca el proyecto dentro del directorio publico de XAMPP y abre:
 http://localhost/CHICO/
 ```
 
-La raiz redirige automaticamente a `frontend/`. Tambien puede abrirse
-directamente:
+La aplicacion usa un router del lado del cliente. Apache dirige las rutas
+publicas al mismo `index.html` mediante `.htaccess`:
 
 ```text
-http://localhost/CHICO/frontend/
+http://localhost/CHICO/
+http://localhost/CHICO/login
+http://localhost/CHICO/registro
+http://localhost/CHICO/dashboard
 ```
 
 El proyecto debe servirse mediante HTTP; los modulos de JavaScript no deben
@@ -44,20 +47,26 @@ abrirse directamente mediante `file://`.
 ```text
 .
 |-- index.html
+|-- .htaccess
 |-- frontend/
-|   |-- index.html
-|   |-- login.html
-|   |-- registro.html
 |   |-- assets/
 |   |   `-- logo.png
 |   |-- css/
 |   |   |-- styles.css
 |   |   |-- login.css
-|   |   `-- registro.css
-|   `-- js/
-|       |-- script.js
-|       |-- login.js
-|       `-- registro.js
+|   |   |-- registro.css
+|   |   `-- dashboard.css
+|   |-- js/
+|   |   |-- router.js
+|   |   |-- script.js
+|   |   |-- login.js
+|   |   |-- registro.js
+|   |   `-- dashboard.js
+|   `-- views/
+|       |-- home.html
+|       |-- login.html
+|       |-- registro.html
+|       `-- dashboard.html
 `-- backend/
     |-- README.md
     `-- firebase/
@@ -66,9 +75,9 @@ abrirse directamente mediante `file://`.
 
 ## Estado
 
-El registro y el inicio de sesion estan conectados a Firebase. El dashboard,
-las inscripciones, los pagos y el contenido real de los cursos todavia no
-estan implementados.
+El registro y el inicio de sesion estan conectados a Firebase. Existe un
+dashboard inicial protegido por autenticacion. Las inscripciones, los pagos,
+el progreso y el contenido real de los cursos todavia no estan implementados.
 
 ## Configuracion de Firebase
 

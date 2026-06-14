@@ -17,6 +17,11 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
+function navigate(path) {
+  window.dispatchEvent(new CustomEvent("app:navigate", { detail: path }));
+}
+
+export function initLogin() {
 const form = document.getElementById("loginForm");
 
 const emailInput = document.getElementById("email");
@@ -126,7 +131,7 @@ form.addEventListener("submit", async (e) => {
 
     if (!user.emailVerified) {
       await sendEmailVerification(user, {
-        url: new URL("../login.html", import.meta.url).href,
+        url: new URL("../../login", import.meta.url).href,
         handleCodeInApp: false
       });
 
@@ -154,7 +159,7 @@ form.addEventListener("submit", async (e) => {
       lastLoginAt: serverTimestamp()
     });
 
-    window.location.href = "dashboard.html";
+    navigate("dashboard");
 
   } catch (error) {
     console.error(error);
@@ -178,7 +183,7 @@ forgotPassword.addEventListener("click", async (e) => {
 
   try {
     await sendPasswordResetEmail(auth, email, {
-      url: new URL("../login.html", import.meta.url).href
+      url: new URL("../../login", import.meta.url).href
     });
 
     alert("Te enviamos un correo para restablecer tu contraseña.");
@@ -193,3 +198,4 @@ forgotPassword.addEventListener("click", async (e) => {
     }
   }
 });
+}

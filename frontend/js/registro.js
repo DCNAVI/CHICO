@@ -13,6 +13,11 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
+function navigate(path) {
+  window.dispatchEvent(new CustomEvent("app:navigate", { detail: path }));
+}
+
+export function initRegister() {
 const form = document.getElementById("registerForm");
 
 const nameInput = document.getElementById("name");
@@ -167,7 +172,7 @@ form.addEventListener("submit", async (e) => {
     });
 
     await sendEmailVerification(user, {
-      url: new URL("../login.html", import.meta.url).href,
+      url: new URL("../../login", import.meta.url).href,
       handleCodeInApp: false
     });
 
@@ -200,5 +205,6 @@ form.addEventListener("submit", async (e) => {
 
 closeModal.addEventListener("click", () => {
   modal.classList.remove("active");
-  window.location.href = "login.html";
+  navigate("login");
 });
+}

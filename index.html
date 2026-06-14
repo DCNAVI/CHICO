@@ -2,11 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=frontend/">
+  <base href="/CHICO/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma educativa Academia Chico">
   <title>Academia Chico</title>
+  <link id="routeStylesheet" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
 </head>
 <body>
-  <p>Abriendo <a href="frontend/">Academia Chico</a>...</p>
+  <div id="app" aria-live="polite"></div>
+  <noscript>Necesitas habilitar JavaScript para usar Academia Chico.</noscript>
+  <script type="module" src="frontend/js/router.js"></script>
 </body>
 </html>
