@@ -1,8 +1,7 @@
 # Academia Chico
 
-Prototipo frontend de una plataforma de cursos en linea, construido con HTML,
-CSS y JavaScript puro. Incluye una pagina comercial y un flujo de autenticacion
-con Firebase Authentication y Cloud Firestore.
+Prototipo de una plataforma de cursos en linea. El proyecto separa la interfaz
+web de la integracion de backend proporcionada por Firebase.
 
 ## Funcionalidades
 
@@ -30,24 +29,39 @@ Coloca el proyecto dentro del directorio publico de XAMPP y abre:
 http://localhost/CHICO/
 ```
 
-Tambien puede servirse con cualquier servidor HTTP estatico. Los modulos de
-JavaScript no deben abrirse directamente mediante `file://`.
+La raiz redirige automaticamente a `frontend/`. Tambien puede abrirse
+directamente:
+
+```text
+http://localhost/CHICO/frontend/
+```
+
+El proyecto debe servirse mediante HTTP; los modulos de JavaScript no deben
+abrirse directamente mediante `file://`.
 
 ## Estructura
 
 ```text
 .
 |-- index.html
-|-- styles.css
-|-- script.js
-|-- login.html
-|-- login.css
-|-- login.js
-|-- registro.html
-|-- registro.css
-|-- registro.js
-|-- firebase-config.js
-`-- logo.png
+|-- frontend/
+|   |-- index.html
+|   |-- login.html
+|   |-- registro.html
+|   |-- assets/
+|   |   `-- logo.png
+|   |-- css/
+|   |   |-- styles.css
+|   |   |-- login.css
+|   |   `-- registro.css
+|   `-- js/
+|       |-- script.js
+|       |-- login.js
+|       `-- registro.js
+`-- backend/
+    |-- README.md
+    `-- firebase/
+        `-- firebase-config.js
 ```
 
 ## Estado
@@ -58,7 +72,6 @@ estan implementados.
 
 ## Configuracion de Firebase
 
-La configuracion cliente se encuentra en `firebase-config.js`. Antes de
-publicar el sitio, configura reglas adecuadas para Firestore y restringe la
-clave API a los dominios y servicios necesarios desde Google Cloud Console.
-
+El backend actual es Firebase, no un servidor propio. Su configuracion cliente
+se encuentra en `backend/firebase/firebase-config.js`. Consulta
+`backend/README.md` para conocer el alcance y las consideraciones de seguridad.

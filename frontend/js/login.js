@@ -1,4 +1,4 @@
-import { auth, db } from "./firebase-config.js";
+import { auth, db } from "../../backend/firebase/firebase-config.js";
 
 import {
   signInWithEmailAndPassword,
@@ -126,7 +126,7 @@ form.addEventListener("submit", async (e) => {
 
     if (!user.emailVerified) {
       await sendEmailVerification(user, {
-        url: window.location.origin + "/login.html",
+        url: new URL("../login.html", import.meta.url).href,
         handleCodeInApp: false
       });
 
@@ -178,7 +178,7 @@ forgotPassword.addEventListener("click", async (e) => {
 
   try {
     await sendPasswordResetEmail(auth, email, {
-      url: window.location.origin + "/login.html"
+      url: new URL("../login.html", import.meta.url).href
     });
 
     alert("Te enviamos un correo para restablecer tu contraseña.");
