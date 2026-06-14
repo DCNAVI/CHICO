@@ -36,7 +36,8 @@ publicas al mismo `index.html` mediante `.htaccess`:
 http://localhost/CHICO/
 http://localhost/CHICO/login
 http://localhost/CHICO/registro
-http://localhost/CHICO/dashboard
+http://localhost/CHICO/cliente/dashboard
+http://localhost/CHICO/admin/dashboard
 ```
 
 El proyecto debe servirse mediante HTTP; los modulos de JavaScript no deben
@@ -55,18 +56,23 @@ abrirse directamente mediante `file://`.
 |   |   |-- styles.css
 |   |   |-- login.css
 |   |   |-- registro.css
-|   |   `-- dashboard.css
+|   |   |-- dashboard.css
+|   |   `-- admin.css
 |   |-- js/
 |   |   |-- router.js
 |   |   |-- script.js
 |   |   |-- login.js
 |   |   |-- registro.js
-|   |   `-- dashboard.js
+|   |   |-- dashboard.js
+|   |   `-- admin-dashboard.js
 |   `-- views/
-|       |-- home.html
-|       |-- login.html
-|       |-- registro.html
-|       `-- dashboard.html
+|       |-- client/
+|       |   |-- home.html
+|       |   |-- login.html
+|       |   |-- registro.html
+|       |   `-- dashboard.html
+|       `-- admin/
+|           `-- dashboard.html
 `-- backend/
     |-- README.md
     `-- firebase/
@@ -75,9 +81,10 @@ abrirse directamente mediante `file://`.
 
 ## Estado
 
-El registro y el inicio de sesion estan conectados a Firebase. Existe un
-dashboard inicial protegido por autenticacion. Las inscripciones, los pagos,
-el progreso y el contenido real de los cursos todavia no estan implementados.
+El registro y el inicio de sesion estan conectados a Firebase. Los paneles de
+cliente y administrador estan separados y protegidos mediante el campo `role`
+del perfil en Firestore. Las inscripciones, los pagos, el progreso y el
+contenido real de los cursos todavia no estan implementados.
 
 ## Configuracion de Firebase
 

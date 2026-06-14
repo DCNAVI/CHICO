@@ -12,9 +12,14 @@ function navigate(path) {
   window.dispatchEvent(new CustomEvent("app:navigate", { detail: path }));
 }
 
-export async function initDashboard() {
-  const welcomeTitle = document.getElementById("welcomeTitle");
-  const logoutButton = document.getElementById("logoutButton");
+async function getUserProfile(userId) {
+  const snapshot = await getDoc(doc(db, "users", userId));
+  return snapshot.exists() ? snapshot.data() : null;
+}
+
+export async function initAdminDashboard() {
+  const welcomeTitle = document.getElementById("adminWelcomeTitle");
+  const logoutButton = document.getElementById("adminLogoutButton");
 
   await auth.authStateReady();
 
@@ -23,35 +28,24 @@ export async function initDashboard() {
     return null;
   }
 
-  const userSnapshot = await getDoc(doc(db, "users", auth.currentUser.uid));
-  const profile = userSnapshot.exists() ? userSnapshot.data() : null;
+  const profile = await getUserProfile(auth.currentUser.uid);
 
-  if (!profile) {
-    await signOut(auth);
-    navigate("login");
+  if (profile?.role !== "admin") {
+    navigate("cliente/dashboard");
     return null;
   }
 
-  if (profile.role === "admin") {
-    navigate("admin/dashboard");
-    return null;
-  }
-
-  const initialName =
+  const name =
     profile.name ||
     auth.currentUser.displayName ||
     auth.currentUser.email ||
-    "estudiante";
-  welcomeTitle.textContent = `Bienvenido, ${initialName}`;
+    "administrador";
+  welcomeTitle.textContent = `Bienvenido, ${name}`;
 
   const unsubscribe = onAuthStateChanged(auth, (user) => {
     if (!user) {
       navigate("login");
-      return;
     }
-
-    const name = user.displayName || user.email || "estudiante";
-    welcomeTitle.textContent = `Bienvenido, ${name}`;
   });
 
   logoutButton.addEventListener("click", async () => {

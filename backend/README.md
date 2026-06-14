@@ -16,3 +16,15 @@ restricciones de la clave API y dominios autorizados en Firebase.
 
 Todavia no existe un servidor propio con API REST, funciones administrativas
 o manejo de secretos.
+
+## Roles
+
+Cada documento `users/{uid}` contiene un campo `role`:
+
+- `student`: accede a `/cliente/dashboard`.
+- `admin`: accede a `/admin/dashboard`.
+
+El formulario publico siempre crea usuarios con rol `student`. Para habilitar
+un administrador, cambia el campo `role` a `admin` desde una operacion
+administrativa confiable, como Firebase Console. No permitas que un usuario
+modifique su propio rol en las reglas de Firestore.

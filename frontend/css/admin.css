@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #172033;
+  background: #f4f8fb;
+}
+
+.admin-page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 28px 22px;
+  color: #fff;
+  background: #07111f;
+}
+
+.admin-logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.admin-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.admin-sidebar nav {
+  flex: 1;
+}
+
+.admin-sidebar nav a,
+#adminLogoutButton {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 13px 15px;
+  color: #dbeafe;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.admin-sidebar nav a.active {
+  color: #07111f;
+  background: #72e6ff;
+  font-weight: 800;
+}
+
+.admin-content {
+  padding: 45px 5%;
+}
+
+.admin-content header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #1f8cff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-content h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.role-badge {
+  padding: 9px 14px;
+  color: #075985;
+  background: #dff7ff;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.admin-grid article {
+  display: grid;
+  gap: 12px;
+  min-height: 180px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.admin-grid i {
+  color: #1f8cff;
+  font-size: 1.8rem;
+}
+
+.admin-grid strong {
+  font-size: 1.3rem;
+}
+
+.admin-grid span {
+  color: #64748b;
+}
+
+@media (max-width: 850px) {
+  .admin-page {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    gap: 18px;
+  }
+
+  .admin-sidebar nav {
+    display: none;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}

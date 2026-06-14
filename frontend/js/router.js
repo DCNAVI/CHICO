@@ -6,27 +6,34 @@ let currentCleanup = null;
 const routes = {
   home: {
     title: "Academia Chico",
-    template: "frontend/views/home.html",
+    template: "frontend/views/client/home.html",
     stylesheet: "frontend/css/styles.css",
     init: () => import("./script.js").then(({ initHome }) => initHome())
   },
   login: {
     title: "Iniciar sesion | Academia Chico",
-    template: "frontend/views/login.html",
+    template: "frontend/views/client/login.html",
     stylesheet: "frontend/css/login.css",
     init: () => import("./login.js").then(({ initLogin }) => initLogin())
   },
   registro: {
     title: "Registro | Academia Chico",
-    template: "frontend/views/registro.html",
+    template: "frontend/views/client/registro.html",
     stylesheet: "frontend/css/registro.css",
     init: () => import("./registro.js").then(({ initRegister }) => initRegister())
   },
-  dashboard: {
+  "client-dashboard": {
     title: "Mi aprendizaje | Academia Chico",
-    template: "frontend/views/dashboard.html",
+    template: "frontend/views/client/dashboard.html",
     stylesheet: "frontend/css/dashboard.css",
     init: () => import("./dashboard.js").then(({ initDashboard }) => initDashboard())
+  },
+  "admin-dashboard": {
+    title: "Administracion | Academia Chico",
+    template: "frontend/views/admin/dashboard.html",
+    stylesheet: "frontend/css/admin.css",
+    init: () => import("./admin-dashboard.js")
+      .then(({ initAdminDashboard }) => initAdminDashboard())
   }
 };
 
@@ -38,7 +45,16 @@ function getRouteName() {
   if (relativePath === "") return "home";
   if (relativePath === "login") return "login";
   if (relativePath === "registro") return "registro";
-  if (relativePath === "dashboard") return "dashboard";
+  if (
+    relativePath === "dashboard" ||
+    relativePath === "cliente" ||
+    relativePath === "cliente/dashboard"
+  ) {
+    return "client-dashboard";
+  }
+  if (relativePath === "admin" || relativePath === "admin/dashboard") {
+    return "admin-dashboard";
+  }
 
   return "not-found";
 }

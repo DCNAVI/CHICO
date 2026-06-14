@@ -159,7 +159,8 @@ form.addEventListener("submit", async (e) => {
       lastLoginAt: serverTimestamp()
     });
 
-    navigate("dashboard");
+    const profile = userSnap.data();
+    navigate(profile.role === "admin" ? "admin/dashboard" : "cliente/dashboard");
 
   } catch (error) {
     console.error(error);
