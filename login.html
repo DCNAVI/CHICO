@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | Academia Chico</title>
+
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+<main class="login-page">
+
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Logo">
+    <span>Academia Chico</span>
+  </a>
+
+  <section class="auth-wrapper">
+
+    <div class="auth-card">
+
+      <div class="form-side">
+        <h1>Iniciar sesión</h1>
+        <p class="subtitle">Accede a tu cuenta para continuar aprendiendo.</p>
+
+        <form id="loginForm">
+
+          <div class="input-group">
+            <label>Correo electrónico</label>
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="email" placeholder="correo@ejemplo.com">
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <div class="input-group">
+            <label>Contraseña</label>
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" placeholder="Tu contraseña">
+              <button type="button" id="togglePassword">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <div class="options">
+            <label>
+              <input type="checkbox" id="remember">
+              Recordarme
+            </label>
+
+            <a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn-login">
+            Entrar
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p class="register-text">
+            ¿No tienes cuenta?
+            <a href="registro.html">Regístrate</a>
+          </p>
+
+        </form>
+      </div>
+
+      <div class="visual-side">
+        <div class="visual-content">
+          <span>Bienvenido de nuevo</span>
+          <h2>Continúa tu progreso</h2>
+          <p>
+            Accede a tus cursos, revisa tus avances y sigue construyendo tus habilidades profesionales.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<div class="modal" id="loginModal">
+  <div class="modal-card">
+    <i class="fa-solid fa-circle-check"></i>
+    <h2>Acceso correcto</h2>
+    <p>Validación de inicio de sesión lista. Después se conectará con Firebase.</p>
+    <button id="closeModal">Entendido</button>
+  </div>
+</div>
+
+<script type="module" src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Academia Chico</title>
+
+  <link rel="stylesheet" href="registro.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+<main class="register-page">
+
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Logo">
+    <span>Academia Chico</span>
+  </a>
+
+  <section class="auth-wrapper">
+    <div class="auth-card">
+
+      <div class="form-side">
+        <h1>Crear cuenta</h1>
+        <p class="subtitle">Confirma tu correo para activar tu acceso.</p>
+
+        <form id="registerForm">
+
+          <div class="input-group">
+            <label>Nombre completo</label>
+            <div class="input-box">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="name" placeholder="Tu nombre completo">
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <div class="input-group">
+            <label>Correo electrónico</label>
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="email" placeholder="correo@ejemplo.com">
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <div class="input-group">
+            <label>Contraseña</label>
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" placeholder="Mínimo 8 caracteres">
+              <button type="button" id="togglePassword">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <div class="input-group">
+            <label>Confirmar contraseña</label>
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="confirmPassword" placeholder="Repite tu contraseña">
+            </div>
+            <small class="error"></small>
+          </div>
+
+          <label class="terms">
+            <input type="checkbox" id="terms">
+            <span>He leído y acepto las políticas.</span>
+          </label>
+
+          <small class="terms-error" id="termsError"></small>
+
+          <button type="submit" class="btn-register">
+            Registrarme
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p class="login-text">
+            ¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a>
+          </p>
+
+        </form>
+      </div>
+
+      <div class="visual-side">
+        <div class="visual-content">
+          <span>Plataforma premium</span>
+          <h2>Aprende desde cualquier dispositivo</h2>
+          <p>Cursos, certificaciones y seguimiento de progreso en una experiencia moderna.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div class="modal" id="successModal">
+  <div class="modal-card">
+    <i class="fa-solid fa-envelope-circle-check"></i>
+    <h2>Confirma tu correo</h2>
+    <p>Te enviamos un enlace de confirmación. Debes validar tu correo antes de entrar.</p>
+    <button id="closeModal">Entendido</button>
+  </div>
+</div>
+
+<script type="module" src="registro.js"></script>
+
+</body>
+</html>

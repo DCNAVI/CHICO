@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia Chico</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span>Academia Chico</span>
+      </div>
+      <nav>
+        <a href="#cursos">Cursos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#planes">Planes</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-buttons">
+        <a href="login.html" class="login">Iniciar sesión</a>
+        <a href="registro.html" class="btn small">Registrarse</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="badge">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Plataforma de aprendizaje del futuro
+        </div>
+
+        <h1>
+          Transforma <br>
+          <span>tu futuro</span> <br>
+          con nosotros
+        </h1>
+
+        <p>
+          Accede a cursos de clase mundial, aprende a tu propio ritmo y alcanza
+          tus metas profesionales con la mejor tecnología educativa.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#cursos" class="btn">Empezar ahora <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#" class="btn secondary"><i class="fa-regular fa-circle-play"></i> Ver demo</a>
+        </div>
+
+        <div class="stats">
+          <div><strong>50K+</strong><span>Estudiantes</span></div>
+          <div><strong>200+</strong><span>Cursos</span></div>
+          <div><strong>95%</strong><span>Satisfacción</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Estudiante">
+        <div class="completed">
+          <div><i class="fa-solid fa-check"></i></div>
+          <p><strong>Curso completado</strong><span>+50 puntos de experiencia</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about section">
+    <div class="container">
+      <h2>¿Quiénes somos?</h2>
+      <p class="section-text">
+        Academia Chico es la plataforma educativa líder en formación online,
+        diseñada para impulsar tu crecimiento profesional con tecnología de
+        vanguardia y contenido de clase mundial.
+      </p>
+
+      <div class="cards four">
+        <div class="info-card">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Misión clara</h3>
+          <p>Democratizar la educación de calidad y hacer que el conocimiento esté al alcance de todos</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Comunidad global</h3>
+          <p>Únete a miles de estudiantes apasionados por aprender y crecer profesionalmente</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fa-solid fa-award"></i>
+          <h3>Certificación reconocida</h3>
+          <p>Obtén certificados que validan tus conocimientos y potencian tu carrera</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Aprendizaje efectivo</h3>
+          <p>Metodología probada que combina teoría y práctica para resultados reales</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cursos" class="courses section gray">
+    <div class="container">
+      <h2>Cursos destacados</h2>
+      <p class="section-text">
+        Descubre nuestra selección de cursos más populares, diseñados por expertos de la industria para llevarte al siguiente nivel
+      </p>
+
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="course-img blue"><span>↗ Trending</span></div>
+          <div class="course-body">
+            <small>Intermedio</small>
+            <h3>Desarrollo Web Full Stack</h3>
+            <p>Domina React, Node.js y bases de datos para convertirte en...</p>
+            <div class="rating">⭐ 4.8 &nbsp; <i class="fa-solid fa-users"></i> 12,543</div>
+            <div class="time"><i class="fa-regular fa-clock"></i> 48 horas</div>
+            <hr>
+            <div class="price">
+              <strong>$199</strong>
+              <a href="#" class="btn small">Inscribirse</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-img purple"><span>↗ Trending</span></div>
+          <div class="course-body">
+            <small>Avanzado</small>
+            <h3>Data Science & Machine Learning</h3>
+            <p>Aprende Python, análisis de datos y algoritmos de ML para dominar la IA</p>
+            <div class="rating">⭐ 4.9 &nbsp; <i class="fa-solid fa-users"></i> 8,234</div>
+            <div class="time"><i class="fa-regular fa-clock"></i> 56 horas</div>
+            <hr>
+            <div class="price">
+              <strong>$249</strong>
+              <a href="#" class="btn small">Inscribirse</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-img pink"></div>
+          <div class="course-body">
+            <small>Principiante</small>
+            <h3>Diseño UI/UX Profesional</h3>
+            <p>Crea interfaces excepcionales con Figma y principios de diseño...</p>
+            <div class="rating">⭐ 4.7 &nbsp; <i class="fa-solid fa-users"></i> 15,678</div>
+            <div class="time"><i class="fa-regular fa-clock"></i> 32 horas</div>
+            <hr>
+            <div class="price">
+              <strong>$149</strong>
+              <a href="#" class="btn small">Inscribirse</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-img red"></div>
+          <div class="course-body">
+            <small>Intermedio</small>
+            <h3>Marketing Digital Avanzado</h3>
+            <p>Estrategias de marketing, SEO, SEM y redes sociales para hacer crecer tu...</p>
+            <div class="rating">⭐ 4.6 &nbsp; <i class="fa-solid fa-users"></i> 10,234</div>
+            <div class="time"><i class="fa-regular fa-clock"></i> 40 horas</div>
+            <hr>
+            <div class="price">
+              <strong>$179</strong>
+              <a href="#" class="btn small">Inscribirse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="outline-center">Ver todos los cursos</a>
+    </div>
+  </section>
+
+  <section id="beneficios" class="section">
+    <div class="container">
+      <h2>¿Por qué elegirnos?</h2>
+      <p class="section-text">
+        Ofrecemos una experiencia de aprendizaje completa con beneficios diseñados para maximizar tu éxito
+      </p>
+
+      <div class="cards benefits">
+        <div class="info-card"><i class="fa-solid fa-video"></i><h3>Contenido en HD</h3><p>Videos de alta calidad con subtítulos en múltiples idiomas</p></div>
+        <div class="info-card"><i class="fa-solid fa-download"></i><h3>Acceso offline</h3><p>Descarga los cursos y aprende sin conexión a internet</p></div>
+        <div class="info-card"><i class="fa-regular fa-message"></i><h3>Comunidad activa</h3><p>Foros y grupos de estudio para resolver dudas</p></div>
+        <div class="info-card"><i class="fa-solid fa-trophy"></i><h3>Certificados</h3><p>Certificaciones reconocidas al completar cada curso</p></div>
+        <div class="info-card"><i class="fa-regular fa-calendar"></i><h3>A tu ritmo</h3><p>Acceso de por vida y horarios 100% flexibles</p></div>
+        <div class="info-card"><i class="fa-solid fa-headphones"></i><h3>Soporte 24/7</h3><p>Asistencia técnica disponible en todo momento</p></div>
+        <div class="info-card"><i class="fa-solid fa-laptop"></i><h3>Multiplataforma</h3><p>Accede desde cualquier dispositivo, en cualquier lugar</p></div>
+        <div class="info-card"><i class="fa-solid fa-shield-halved"></i><h3>Garantía total</h3><p>Devolución de dinero en los primeros 30 días</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planes" class="section gray">
+    <div class="container">
+      <h2>Planes y precios</h2>
+      <p class="section-text">
+        Elige el plan que mejor se adapte a tus necesidades y comienza a transformar tu carrera hoy
+      </p>
+
+      <div class="plans">
+        <div class="plan">
+          <h3>Básico</h3>
+          <p>Perfecto para comenzar tu viaje de aprendizaje</p>
+          <h4>$29 <span>/mes</span></h4>
+          <button>Comenzar ahora</button>
+          <ul>
+            <li>Acceso a 50+ cursos básicos</li>
+            <li>Certificados de finalización</li>
+            <li>Soporte por email</li>
+            <li>Acceso en 1 dispositivo</li>
+            <li>Contenido descargable</li>
+          </ul>
+        </div>
+
+        <div class="plan popular">
+          <h3>Profesional</h3>
+          <p>La opción más popular para profesionales</p>
+          <h4>$59 <span>/mes</span></h4>
+          <button>Comenzar ahora</button>
+          <ul>
+            <li>Acceso a 200+ cursos premium</li>
+            <li>Certificados profesionales</li>
+            <li>Soporte prioritario 24/7</li>
+            <li>Acceso ilimitado en dispositivos</li>
+            <li>Contenido descargable</li>
+            <li>Proyectos prácticos</li>
+            <li>Mentoría grupal mensual</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <h3>Empresarial</h3>
+          <p>Solución completa para equipos y empresas</p>
+          <h4>$199 <span>/mes</span></h4>
+          <button>Comenzar ahora</button>
+          <ul>
+            <li>Todo lo del plan Profesional</li>
+            <li>Acceso para 10 usuarios</li>
+            <li>Dashboard de administración</li>
+            <li>Reportes y analytics</li>
+            <li>Mentoría 1 a 1</li>
+            <li>Soporte dedicado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="empresas" class="business">
+    <div class="container business-grid">
+      <div>
+        <h2>Academia Chico para Empresas</h2>
+        <p>
+          Potencia el talento de tu equipo con nuestra solución empresarial.
+          Capacitación a escala con tecnología de vanguardia y resultados medibles.
+        </p>
+
+        <div class="business-item"><i class="fa-solid fa-building"></i><div><h3>Soluciones corporativas</h3><p>Plataforma personalizada con tu marca e identidad corporativa</p></div></div>
+        <div class="business-item"><i class="fa-solid fa-users"></i><div><h3>Gestión de equipos</h3><p>Dashboard completo para administrar y monitorear el progreso de tu equipo</p></div></div>
+        <div class="business-item"><i class="fa-solid fa-chart-simple"></i><div><h3>Analytics avanzados</h3><p>Métricas detalladas y reportes personalizados sobre el aprendizaje</p></div></div>
+        <div class="business-item"><i class="fa-solid fa-award"></i><div><h3>Certificaciones grupales</h3><p>Programas de certificación diseñados específicamente para tu organización</p></div></div>
+
+        <a href="#" class="btn">Solicitar demo empresarial <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div>
+        <div class="trusted">
+          <h3>Empresas que confían en nosotros</h3>
+          <p><strong>TechCorp</strong><br>500+ empleados capacitados <span>✓</span></p>
+          <p><strong>InnovateLab</strong><br>300+ empleados capacitados <span>✓</span></p>
+          <p><strong>StartupHub</strong><br>250+ empleados capacitados <span>✓</span></p>
+          <p><strong>DataFlow</strong><br>400+ empleados capacitados <span>✓</span></p>
+        </div>
+
+        <div class="business-stats">
+          <div><strong>1500+</strong><span>Empresas</span></div>
+          <div><strong>50K+</strong><span>Empleados</span></div>
+          <div><strong>92%</strong><span>Retención</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container faq-container">
+      <h2>Preguntas frecuentes</h2>
+      <p class="section-text">Resolvemos tus dudas más comunes</p>
+
+      <div class="faq-item">
+        <button>¿Cómo funciona el acceso a los cursos? <span>+</span></button>
+        <p>Al inscribirte tendrás acceso inmediato al curso desde cualquier dispositivo compatible.</p>
+      </div>
+
+      <div class="faq-item">
+        <button>¿Los certificados son reconocidos? <span>+</span></button>
+        <p>Sí, recibirás un certificado digital al finalizar cada curso.</p>
+      </div>
+
+      <div class="faq-item">
+        <button>¿Puedo cambiar de plan en cualquier momento? <span>+</span></button>
+        <p>Sí, puedes actualizar o cambiar tu plan cuando lo necesites.</p>
+      </div>
+
+      <div class="faq-item">
+        <button>¿Ofrecen garantía de reembolso? <span>+</span></button>
+        <p>Sí, tienes garantía de reembolso durante los primeros 30 días.</p>
+      </div>
+
+      <a href="#" class="btn contact">Contáctanos</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo">
+          <div class="logo-box">
+            <i class="fa-solid fa-brain"></i>
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <span>Academia Chico</span>
+        </div>
+        <p>La plataforma educativa líder que transforma vidas a través del aprendizaje online de calidad mundial.</p>
+      </div>
+
+      <div>
+        <h3>Plataforma</h3>
+        <a>Explorar cursos</a>
+        <a>Para empresas</a>
+        <a>Precios</a>
+        <a>Certificaciones</a>
+      </div>
+
+      <div>
+        <h3>Recursos</h3>
+        <a>Blog</a>
+        <a>Ayuda</a>
+        <a>Comunidad</a>
+        <a>Eventos</a>
+      </div>
+
+      <div>
+        <h3>Empresa</h3>
+        <a>Sobre nosotros</a>
+        <a>Carreras</a>
+        <a>Prensa</a>
+        <a>Contacto</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a>Privacidad</a>
+        <a>Términos</a>
+        <a>Cookies</a>
+        <a>Licencias</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Academia Chico. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
