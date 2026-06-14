@@ -3,6 +3,9 @@
 Prototipo de una plataforma de cursos en linea. El proyecto separa la interfaz
 web de la integracion de backend proporcionada por Firebase.
 
+La documentacion completa del estado actual se encuentra en
+[`docs/PROYECTO.md`](docs/PROYECTO.md).
+
 ## Funcionalidades
 
 - Landing page responsive con cursos, beneficios, planes, empresas y FAQ.
@@ -49,6 +52,8 @@ abrirse directamente mediante `file://`.
 .
 |-- index.html
 |-- .htaccess
+|-- docs/
+|   `-- PROYECTO.md
 |-- frontend/
 |   |-- assets/
 |   |   `-- logo.png
