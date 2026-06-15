@@ -6,6 +6,10 @@ web de la integracion de backend proporcionada por Firebase.
 La documentacion completa del estado actual se encuentra en
 [`docs/PROYECTO.md`](docs/PROYECTO.md).
 
+El plan para implementar cursos, ventas, suscripciones y administracion se
+encuentra en
+[`docs/PLAN_IMPLEMENTACION.md`](docs/PLAN_IMPLEMENTACION.md).
+
 ## Funcionalidades
 
 - Landing page responsive con cursos, beneficios, planes, empresas y FAQ.
@@ -53,7 +57,8 @@ abrirse directamente mediante `file://`.
 |-- index.html
 |-- .htaccess
 |-- docs/
-|   `-- PROYECTO.md
+|   |-- PROYECTO.md
+|   `-- PLAN_IMPLEMENTACION.md
 |-- frontend/
 |   |-- assets/
 |   |   `-- logo.png

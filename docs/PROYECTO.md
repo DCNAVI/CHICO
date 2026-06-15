@@ -318,3 +318,12 @@ cambie su propio rol desde el navegador.
 ```text
 https://github.com/DCNAVI/CHICO
 ```
+
+## 16. Plan de implementacion
+
+La hoja de ruta para convertir el prototipo en una plataforma comercial se
+encuentra en:
+
+```text
+docs/PLAN_IMPLEMENTACION.md
+```
