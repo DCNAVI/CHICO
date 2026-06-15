@@ -45,6 +45,11 @@ http://localhost/CHICO/login
 http://localhost/CHICO/registro
 http://localhost/CHICO/cliente/dashboard
 http://localhost/CHICO/admin/dashboard
+http://localhost/CHICO/error/401
+http://localhost/CHICO/error/403
+http://localhost/CHICO/error/404
+http://localhost/CHICO/error/500
+http://localhost/CHICO/error/offline
 ```
 
 El proyecto debe servirse mediante HTTP; los modulos de JavaScript no deben
@@ -67,22 +72,30 @@ abrirse directamente mediante `file://`.
 |   |   |-- login.css
 |   |   |-- registro.css
 |   |   |-- dashboard.css
-|   |   `-- admin.css
+|   |   |-- admin.css
+|   |   `-- errors.css
 |   |-- js/
 |   |   |-- router.js
 |   |   |-- script.js
 |   |   |-- login.js
 |   |   |-- registro.js
 |   |   |-- dashboard.js
-|   |   `-- admin-dashboard.js
+|   |   |-- admin-dashboard.js
+|   |   `-- errors.js
 |   `-- views/
 |       |-- client/
 |       |   |-- home.html
 |       |   |-- login.html
 |       |   |-- registro.html
 |       |   `-- dashboard.html
-|       `-- admin/
-|           `-- dashboard.html
+|       |-- admin/
+|       |   `-- dashboard.html
+|       `-- errors/
+|           |-- 401.html
+|           |-- 403.html
+|           |-- 404.html
+|           |-- 500.html
+|           `-- offline.html
 `-- backend/
     |-- README.md
     `-- firebase/

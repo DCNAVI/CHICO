@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sin conexion | Academia Chico</title>
+</head>
+<body>
+  <main class="error-page error-offline">
+    <div class="comic-burst" aria-hidden="true">OFF</div>
+
+    <section class="error-panel">
+      <p class="error-kicker">Conexion interrumpida</p>
+      <h1>Internet hizo un `break`</h1>
+      <div class="speech-bubble">
+        <strong>La red no responde.</strong>
+        <span>Revisa tu conexion y vuelve a ejecutar la peticion.</span>
+      </div>
+
+      <div class="code-card" aria-label="Mensaje de codigo">
+        <div class="code-card-bar">
+          <span></span><span></span><span></span>
+          <small>network.js</small>
+        </div>
+        <pre><code>navigator.onLine === false;
+await reconnect();
+// esperando respuesta...</code></pre>
+      </div>
+
+      <div class="error-actions">
+        <button class="comic-button primary" type="button" data-error-retry>
+          Probar otra vez
+        </button>
+        <a href="./" class="comic-button" data-route>Ir al inicio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -24,14 +24,14 @@ export async function initAdminDashboard() {
   await auth.authStateReady();
 
   if (!auth.currentUser) {
-    navigate("login");
+    navigate("error/401");
     return null;
   }
 
   const profile = await getUserProfile(auth.currentUser.uid);
 
   if (profile?.role !== "admin") {
-    navigate("cliente/dashboard");
+    navigate("error/403");
     return null;
   }
 

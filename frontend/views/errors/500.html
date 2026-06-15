@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>500 | Error interno</title>
+</head>
+<body>
+  <main class="error-page error-500">
+    <div class="comic-burst" aria-hidden="true">500</div>
+
+    <section class="error-panel">
+      <p class="error-kicker">Error inesperado</p>
+      <h1>El servidor piso una llave suelta</h1>
+      <div class="speech-bubble">
+        <strong>No fue tu culpa.</strong>
+        <span>Algo fallo mientras intentabamos renderizar esta aventura.</span>
+      </div>
+
+      <div class="code-card" aria-label="Mensaje de codigo">
+        <div class="code-card-bar">
+          <span></span><span></span><span></span>
+          <small>server.log</small>
+        </div>
+        <pre><code>try {
+  await loadPage();
+} catch (error) {
+  status = 500;
+}</code></pre>
+      </div>
+
+      <div class="error-actions">
+        <button class="comic-button primary" type="button" data-error-retry>
+          <i class="fa-solid fa-rotate-right"></i>
+          Reintentar
+        </button>
+        <a href="./" class="comic-button" data-route>Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

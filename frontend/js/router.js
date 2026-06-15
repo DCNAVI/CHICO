@@ -34,6 +34,36 @@ const routes = {
     stylesheet: "frontend/css/admin.css",
     init: () => import("./admin-dashboard.js")
       .then(({ initAdminDashboard }) => initAdminDashboard())
+  },
+  "error-401": {
+    title: "401 | Sesion requerida",
+    template: "frontend/views/errors/401.html",
+    stylesheet: "frontend/css/errors.css",
+    init: () => import("./errors.js").then(({ initErrorPage }) => initErrorPage())
+  },
+  "error-403": {
+    title: "403 | Acceso prohibido",
+    template: "frontend/views/errors/403.html",
+    stylesheet: "frontend/css/errors.css",
+    init: () => import("./errors.js").then(({ initErrorPage }) => initErrorPage())
+  },
+  "error-404": {
+    title: "404 | Pagina no encontrada",
+    template: "frontend/views/errors/404.html",
+    stylesheet: "frontend/css/errors.css",
+    init: () => import("./errors.js").then(({ initErrorPage }) => initErrorPage())
+  },
+  "error-500": {
+    title: "500 | Error interno",
+    template: "frontend/views/errors/500.html",
+    stylesheet: "frontend/css/errors.css",
+    init: () => import("./errors.js").then(({ initErrorPage }) => initErrorPage())
+  },
+  "error-offline": {
+    title: "Sin conexion | Academia Chico",
+    template: "frontend/views/errors/offline.html",
+    stylesheet: "frontend/css/errors.css",
+    init: () => import("./errors.js").then(({ initErrorPage }) => initErrorPage())
   }
 };
 
@@ -55,8 +85,19 @@ function getRouteName() {
   if (relativePath === "admin" || relativePath === "admin/dashboard") {
     return "admin-dashboard";
   }
+  if (relativePath === "401" || relativePath === "error/401") return "error-401";
+  if (relativePath === "403" || relativePath === "error/403") return "error-403";
+  if (relativePath === "404" || relativePath === "error/404") return "error-404";
+  if (relativePath === "500" || relativePath === "error/500") return "error-500";
+  if (
+    relativePath === "offline" ||
+    relativePath === "sin-conexion" ||
+    relativePath === "error/offline"
+  ) {
+    return "error-offline";
+  }
 
-  return "not-found";
+  return "error-404";
 }
 
 function navigate(path, { replace = false } = {}) {
@@ -74,19 +115,6 @@ async function renderRoute() {
   if (typeof currentCleanup === "function") {
     currentCleanup();
     currentCleanup = null;
-  }
-
-  if (!route) {
-    document.title = "Pagina no encontrada | Academia Chico";
-    routeStylesheet.removeAttribute("href");
-    app.innerHTML = `
-      <main style="font-family: Arial, sans-serif; padding: 4rem; text-align: center">
-        <h1>Pagina no encontrada</h1>
-        <p>La ruta que buscas no existe.</p>
-        <a href="${appBaseUrl.pathname}" data-route>Volver al inicio</a>
-      </main>
-    `;
-    return;
   }
 
   try {
@@ -107,12 +135,21 @@ async function renderRoute() {
     currentCleanup = await route.init();
   } catch (error) {
     console.error(error);
-    app.innerHTML = `
-      <main style="font-family: Arial, sans-serif; padding: 4rem; text-align: center">
-        <h1>No se pudo cargar la pagina</h1>
-        <p>Actualiza el navegador para intentarlo nuevamente.</p>
-      </main>
-    `;
+
+    if (routeName.startsWith("error-")) {
+      routeStylesheet.removeAttribute("href");
+      app.innerHTML = `
+        <main style="font-family: Arial, sans-serif; padding: 4rem; text-align: center">
+          <h1>No se pudo cargar la pagina de error</h1>
+          <a href="${appBaseUrl.pathname}">Volver al inicio</a>
+        </main>
+      `;
+      return;
+    }
+
+    navigate(navigator.onLine ? "error/500" : "error/offline", {
+      replace: true
+    });
   }
 }
 
@@ -129,5 +166,8 @@ document.addEventListener("click", (event) => {
 
 window.addEventListener("popstate", renderRoute);
 window.addEventListener("app:navigate", (event) => navigate(event.detail));
+window.addEventListener("offline", () => {
+  navigate("error/offline", { replace: true });
+});
 
 renderRoute();

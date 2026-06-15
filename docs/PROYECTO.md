@@ -26,6 +26,7 @@ por rutas mediante una aplicacion de una sola pagina (SPA).
 - Proteccion basica de paneles por autenticacion y rol.
 - Cierre de sesion.
 - Pagina para rutas no encontradas.
+- Paginas de error 401, 403, 404, 500 y sin conexion.
 
 ### Pendiente
 
@@ -81,6 +82,11 @@ JavaScript y las plantillas necesitan un servidor HTTP.
 | `/CHICO/cliente/dashboard` | Estudiante | Panel del cliente |
 | `/CHICO/admin/dashboard` | Administrador | Panel administrativo |
 | `/CHICO/dashboard` | Estudiante | Alias del panel del cliente |
+| `/CHICO/error/401` | Publico | Sesion requerida |
+| `/CHICO/error/403` | Publico | Permiso denegado |
+| `/CHICO/error/404` | Publico | Ruta no encontrada |
+| `/CHICO/error/500` | Publico | Error interno |
+| `/CHICO/error/offline` | Publico | Error de conexion |
 
 Apache usa `.htaccess` para enviar las rutas publicas al `index.html`
 principal. El archivo `frontend/js/router.js` selecciona la plantilla, hoja de
@@ -133,12 +139,14 @@ Firebase. No contiene una API privada ni secretos de servidor.
 |   |-- css/
 |   |   |-- admin.css
 |   |   |-- dashboard.css
+|   |   |-- errors.css
 |   |   |-- login.css
 |   |   |-- registro.css
 |   |   `-- styles.css
 |   |-- js/
 |   |   |-- admin-dashboard.js
 |   |   |-- dashboard.js
+|   |   |-- errors.js
 |   |   |-- login.js
 |   |   |-- registro.js
 |   |   |-- router.js
@@ -146,11 +154,17 @@ Firebase. No contiene una API privada ni secretos de servidor.
 |   `-- views/
 |       |-- admin/
 |       |   `-- dashboard.html
-|       `-- client/
+|       |-- client/
 |           |-- dashboard.html
 |           |-- home.html
 |           |-- login.html
 |           `-- registro.html
+|       `-- errors/
+|           |-- 401.html
+|           |-- 403.html
+|           |-- 404.html
+|           |-- 500.html
+|           `-- offline.html
 `-- backend/
     |-- README.md
     `-- firebase/

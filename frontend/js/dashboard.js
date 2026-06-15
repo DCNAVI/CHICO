@@ -19,7 +19,7 @@ export async function initDashboard() {
   await auth.authStateReady();
 
   if (!auth.currentUser) {
-    navigate("login");
+    navigate("error/401");
     return null;
   }
 
@@ -28,7 +28,7 @@ export async function initDashboard() {
 
   if (!profile) {
     await signOut(auth);
-    navigate("login");
+    navigate("error/401");
     return null;
   }
 

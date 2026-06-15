@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>404 | Pagina no encontrada</title>
+</head>
+<body>
+  <main class="error-page error-404">
+    <div class="comic-burst" aria-hidden="true">404</div>
+
+    <section class="error-panel">
+      <p class="error-kicker">Ruta perdida</p>
+      <h1>Esta pagina se fue a compilar</h1>
+      <div class="speech-bubble">
+        <strong>Buscamos en todo el repositorio.</strong>
+        <span>No hay componente, vista ni ruta con esa direccion.</span>
+      </div>
+
+      <div class="code-card" aria-label="Mensaje de codigo">
+        <div class="code-card-bar">
+          <span></span><span></span><span></span>
+          <small>router.js</small>
+        </div>
+        <pre><code>routes.find(currentPath);
+// undefined
+// Houston, perdimos el componente.</code></pre>
+      </div>
+
+      <div class="error-actions">
+        <a href="./" class="comic-button primary" data-route>
+          <i class="fa-solid fa-house"></i>
+          Volver al inicio
+        </a>
+        <button class="comic-button" type="button" data-error-back>
+          Regresar
+        </button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>401 | Sesion requerida</title>
+</head>
+<body>
+  <main class="error-page error-401">
+    <div class="comic-burst" aria-hidden="true">401</div>
+
+    <section class="error-panel">
+      <p class="error-kicker">Acceso detenido</p>
+      <h1>Necesitas iniciar sesion</h1>
+      <div class="speech-bubble">
+        <strong>El guardia del servidor dice:</strong>
+        <span>"Primero tus credenciales, luego el codigo."</span>
+      </div>
+
+      <div class="code-card" aria-label="Mensaje de codigo">
+        <div class="code-card-bar">
+          <span></span><span></span><span></span>
+          <small>auth.js</small>
+        </div>
+        <pre><code>if (!user) {
+  throw new Error("LOGIN_REQUIRED");
+}</code></pre>
+      </div>
+
+      <div class="error-actions">
+        <a href="login" class="comic-button primary" data-route>
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Iniciar sesion
+        </a>
+        <a href="./" class="comic-button" data-route>Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

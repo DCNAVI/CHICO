@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>403 | Acceso prohibido</title>
+</head>
+<body>
+  <main class="error-page error-403">
+    <div class="comic-burst" aria-hidden="true">403</div>
+
+    <section class="error-panel">
+      <p class="error-kicker">Permiso denegado</p>
+      <h1>Este nivel aun esta bloqueado</h1>
+      <div class="speech-bubble">
+        <strong>Plot twist:</strong>
+        <span>Tu cuenta existe, pero no tiene permiso para entrar aqui.</span>
+      </div>
+
+      <div class="code-card" aria-label="Mensaje de codigo">
+        <div class="code-card-bar">
+          <span></span><span></span><span></span>
+          <small>permissions.js</small>
+        </div>
+        <pre><code>const allowed = user.role === "admin";
+console.assert(allowed, "ACCESS_DENIED");</code></pre>
+      </div>
+
+      <div class="error-actions">
+        <a href="cliente/dashboard" class="comic-button primary" data-route>
+          Ir a mi panel
+        </a>
+        <a href="./" class="comic-button" data-route>Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

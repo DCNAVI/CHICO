@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #07111f;
+  --paper: #fffdf5;
+  --blue: #1f8cff;
+  --cyan: #72e6ff;
+  --yellow: #ffd84d;
+  --red: #ff4d6d;
+  --purple: #8b5cf6;
+  --shadow: 10px 10px 0 var(--ink);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background-color: #dff7ff;
+  background-image:
+    radial-gradient(rgba(7, 17, 31, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(135deg, transparent 47%, rgba(31, 140, 255, 0.12) 48% 52%, transparent 53%);
+  background-size: 14px 14px, 70px 70px;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.error-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 55px 22px;
+  isolation: isolate;
+}
+
+.error-page::before,
+.error-page::after {
+  position: fixed;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  content: "";
+  border: 5px solid var(--ink);
+  transform: rotate(18deg);
+}
+
+.error-page::before {
+  top: -90px;
+  left: -70px;
+  background: var(--yellow);
+}
+
+.error-page::after {
+  right: -80px;
+  bottom: -100px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+.error-panel {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  padding: clamp(30px, 6vw, 58px);
+  background: var(--paper);
+  border: 5px solid var(--ink);
+  box-shadow: var(--shadow);
+  transform: rotate(-0.6deg);
+}
+
+.error-panel::before {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 72px;
+  height: 20px;
+  content: "";
+  background: var(--cyan);
+  border: 3px solid var(--ink);
+  transform: rotate(5deg);
+}
+
+.comic-burst {
+  position: absolute;
+  top: clamp(14px, 5vw, 42px);
+  left: clamp(15px, 5vw, 55px);
+  display: grid;
+  width: clamp(105px, 18vw, 165px);
+  aspect-ratio: 1;
+  place-items: center;
+  color: var(--ink);
+  background: var(--yellow);
+  clip-path: polygon(
+    50% 0%, 60% 24%, 78% 8%, 78% 31%, 100% 28%, 82% 50%,
+    100% 68%, 75% 68%, 78% 94%, 58% 78%, 48% 100%, 39% 77%,
+    18% 94%, 22% 69%, 0 68%, 18% 49%, 0 29%, 24% 31%, 22% 8%, 41% 24%
+  );
+  font-family: "Bangers", Impact, sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  letter-spacing: 3px;
+  filter: drop-shadow(6px 7px 0 var(--ink));
+  transform: rotate(-9deg);
+}
+
+.error-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  color: #fff;
+  background: var(--blue);
+  border: 3px solid var(--ink);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+.error-panel h1 {
+  max-width: 620px;
+  margin-bottom: 24px;
+  font-family: "Bangers", Impact, sans-serif;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.speech-bubble {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  margin: 0 0 30px 16px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: 5px 5px 0 rgba(7, 17, 31, 0.2);
+}
+
+.speech-bubble::after {
+  position: absolute;
+  bottom: -20px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+  content: "";
+  background: #fff;
+  border-right: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.speech-bubble strong {
+  font-size: 1.05rem;
+}
+
+.speech-bubble span {
+  color: #475569;
+  line-height: 1.55;
+}
+
+.code-card {
+  min-width: 0;
+  margin: 34px 0 30px;
+  overflow: hidden;
+  color: #dff7ff;
+  background: var(--ink);
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--blue);
+  transform: rotate(0.7deg);
+}
+
+.code-card-bar {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 10px 13px;
+  color: var(--ink);
+  background: #fff;
+  border-bottom: 3px solid var(--ink);
+}
+
+.code-card-bar span {
+  width: 12px;
+  height: 12px;
+  background: var(--red);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+
+.code-card-bar span:nth-child(2) {
+  background: var(--yellow);
+}
+
+.code-card-bar span:nth-child(3) {
+  background: #4ade80;
+}
+
+.code-card-bar small {
+  margin-left: auto;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.code-card pre {
+  max-width: 100%;
+  padding: 20px;
+  overflow-x: auto;
+  font-size: clamp(0.78rem, 2vw, 1rem);
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.comic-button {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 12px 20px;
+  color: var(--ink);
+  background: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  font: inherit;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.comic-button.primary {
+  background: var(--cyan);
+}
+
+.comic-button:hover {
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: translate(2px, 2px) rotate(-1deg);
+}
+
+.error-403 .comic-burst,
+.error-500 .comic-burst {
+  color: #fff;
+  background: var(--red);
+}
+
+.error-404 .comic-burst {
+  background: var(--cyan);
+}
+
+.error-offline .comic-burst {
+  color: #fff;
+  background: var(--purple);
+}
+
+@media (max-width: 980px) {
+  .comic-burst {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto -22px;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .error-page {
+    padding: 28px 14px 45px;
+  }
+
+  .error-panel {
+    width: calc(100vw - 44px);
+    max-width: calc(100vw - 44px);
+    padding: 34px 20px 28px;
+    box-shadow: 6px 6px 0 var(--ink);
+    transform: none;
+  }
+
+  .error-panel h1 {
+    font-size: 3.4rem;
+  }
+
+  .speech-bubble {
+    margin-left: 0;
+  }
+
+  .code-card pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .error-actions,
+  .comic-button {
+    width: 100%;
+  }
+}
