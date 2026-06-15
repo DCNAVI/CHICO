@@ -772,4 +772,3 @@ pagina principal dejara de depender de cursos escritos directamente en HTML.
 - [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
 - [Modelo de datos de Firestore](https://firebase.google.com/docs/firestore/data-model)
 - [Firebase Emulator para Functions](https://firebase.google.com/docs/functions/local-emulator)
-
