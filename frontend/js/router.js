@@ -154,14 +154,25 @@ async function renderRoute() {
 }
 
 document.addEventListener("click", (event) => {
-  const link = event.target.closest("a[data-route]");
+  const link = event.target.closest("a");
 
   if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
     return;
   }
 
-  event.preventDefault();
-  navigate(link.getAttribute("href"));
+  const href = link.getAttribute("href") || "";
+
+  if (href.startsWith("#")) {
+    event.preventDefault();
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+
+  if (link.hasAttribute("data-route")) {
+    event.preventDefault();
+    navigate(href);
+  }
 });
 
 window.addEventListener("popstate", renderRoute);
